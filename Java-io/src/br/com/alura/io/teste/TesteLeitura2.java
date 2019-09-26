@@ -8,9 +8,13 @@ public class TesteLeitura2 {
 		
 		
 		Scanner ler = new Scanner(new File("contas.csv"));
-		String arquivo = ler.nextLine();
 		
-		System.out.println(arquivo);
+		
+		while(ler.hasNextLine()) {
+			String arquivo = ler.nextLine();
+			System.out.println(arquivo);
+		}
+		
 		
 		ler.close();
 	}
