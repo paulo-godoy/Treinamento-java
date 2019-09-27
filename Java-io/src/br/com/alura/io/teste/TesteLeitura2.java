@@ -16,7 +16,7 @@ public class TesteLeitura2 {
 		
 		while(ler.hasNextLine()) {
 			String arquivo = ler.nextLine();
-			System.out.println(arquivo);
+			//System.out.println(arquivo);
 			
 //			String[] valores = arquivo.split(",");
 //			System.out.println(Arrays.toString(valores));
@@ -27,16 +27,16 @@ public class TesteLeitura2 {
 			linhaScanner.useLocale(Locale.US);
 			linhaScanner.useDelimiter(",");
 			
-			String valor1 = linhaScanner.next();
-			int valor2 = linhaScanner.nextInt();
-			int valor3 = linhaScanner.nextInt();
-			String valor4 = linhaScanner.next();
-			double valor5 = linhaScanner.nextDouble();
+			String tipoConta = linhaScanner.next();
+			int agencia = linhaScanner.nextInt();
+			int numero = linhaScanner.nextInt();
+			String titular = linhaScanner.next();
+			double saldo = linhaScanner.nextDouble();
 			
 			
-		
+			System.out.format(new Locale("pt","br"), "%s - %04d-%08d: %s, %10.2f %n", tipoConta, agencia, numero, titular, saldo);
 			
-			System.out.println("Conta: " + valor1 + " Agencia: " + valor2 + " Numero da conta: " + valor3 + " Titular: " + valor4 + " Saldo: " + valor5 );
+			
 			
 			
 			
