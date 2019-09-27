@@ -1,6 +1,7 @@
 package br.com.alura.io.teste;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TesteLeitura2 {
@@ -13,6 +14,11 @@ public class TesteLeitura2 {
 		while(ler.hasNextLine()) {
 			String arquivo = ler.nextLine();
 			System.out.println(arquivo);
+			
+			String[] valores = arquivo.split(",");
+			System.out.println(Arrays.toString(valores));
+			
+			System.out.println(valores[3]);
 		}
 		
 		
