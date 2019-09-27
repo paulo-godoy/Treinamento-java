@@ -8,21 +8,11 @@ public class TesteLeitura2 {
 	public static void main(String[] args) throws Exception {
 		
 		
-		Scanner ler = new Scanner(new File("contas.csv"));
+		Scanner ler = new Scanner(new File("contas.csv"), "UTF-8");
 		
-		//Scanner para ler linha
-		
-		
-		
-		while(ler.hasNextLine()) {
+			while(ler.hasNextLine()) {
 			String arquivo = ler.nextLine();
-			//System.out.println(arquivo);
-			
-//			String[] valores = arquivo.split(",");
-//			System.out.println(Arrays.toString(valores));
-//			
-//			System.out.println(valores[3]);
-			
+				
 			Scanner linhaScanner = new Scanner(arquivo);
 			linhaScanner.useLocale(Locale.US);
 			linhaScanner.useDelimiter(",");
