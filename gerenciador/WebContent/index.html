@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function Mudarestado(el) {
+    var display = document.getElementById(el).style.display;
+    if(display == "none")
+        document.getElementById(el).style.display = 'block';
+    else
+        document.getElementById(el).style.display = 'none';
+}
+</script>
+</head>
+<body>
+ <h1 id="teste" style="color: #000000" onclick="Mudarestado('teste')">Bem vindo</h1>
+</body>
+</html>
