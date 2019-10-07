@@ -7,7 +7,9 @@
 </head>
 <body>
 
-<form action="/gerenciador/novaEmpresa" method="post" class="needs-validation" novalidate>
+<div class="container">
+
+<form action="/gerenciador/novaEmpresa.jsp" method="post" class="needs-validation" novalidate>
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationCustom01">Nome:</label>
@@ -26,7 +28,7 @@
     
     <div class="col-md-4 mb-3">
       <label for="validationCustom03">Cidade</label>
-      <input type="text" class="form-control" id="validationCustom03" placeholder="Cidade" required>
+      <input type="text" name="cidade" class="form-control" id="validationCustom03" placeholder="Cidade" required>
       <div class="invalid-feedback">
         Por favor, informe uma cidade válida.
       </div>
@@ -37,14 +39,14 @@
     
     <div class="col-md-6 mb-3">
       <label for="validationCustom04">Estado</label>
-      <input type="text" name="estado" class="form-control" id="validationCustom04" placeholder="Estado" required>
+      <input type="text" name="estado" name="estado" class="form-control" id="validationCustom04" placeholder="Estado" required>
       <div class="invalid-feedback">
         Por favor, informe um estado válido.
       </div>
     </div>
     <div class="col-md-6 mb-3">
       <label for="validationCustom05">CEP</label>
-      <input type="text" name="cep" class="form-control" id="validationCustom05" placeholder="CEP" required>
+      <input type="text" name="cep" name="cep" class="form-control" id="validationCustom05" placeholder="CEP" required>
       <div class="invalid-feedback">
         Por favor, informe um CEP válido.
       </div>
@@ -63,6 +65,8 @@
   </div>
   <button class="btn btn-primary" type="submit">Enviar</button>
 </form>
+
+</div>
 
 <script>
 // Exemplo de JavaScript inicial para desativar envios de formulário, se houver campos inválidos.
