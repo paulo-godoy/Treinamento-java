@@ -1,7 +1,3 @@
-<%
-	String novaEmpresa = (String)request.getAttribute("empresa");
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +9,7 @@
 
 <div class="container">
 	<div class="alert alert-success mw-10 p-2" role="alert"> 
-		Empresa <%= novaEmpresa %> cadastrada com sucesso.
+		Empresa ${ empresa } cadastrada com sucesso.
 	</div>
 	<a class="btn btn-primary" href="/gerenciador/listaEmpresasServlet" role="button">Verificar lista de empresas</a>
 </div>

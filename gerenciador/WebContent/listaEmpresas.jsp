@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List, br.com.aluragerenciador.servlet.Empresa"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
@@ -22,24 +18,15 @@
 		</thead>
 		<h3 style="color: #fff; border: 1px solid #ccc; background: #054f77; padding: 10px; ">Empresas cadastradas</h3><br />
 		
-		<% 
-		
-		List<Empresa> lista = (List<Empresa>)request.getAttribute("empresas");
-		
-		for (Empresa empresa : lista) {
-			
-		%>
+		<c:forEach items="${ empresas }" var="empresa">
 			<tbody>
 				<tr>
-				<td> <%= empresa.getNome() %> </td>
-				<td> <%= empresa.getEndereco() %> </td>
-			    <td> <%= empresa.getCidade() %> </td>
-				<td> <%= empresa.getEstado() %> </td>
+				<td> ${ empresa.nome } </td>
+				<td> ${ empresa.endereco } </td>
+			    <td> ${ empresa.cidade } </td>
+				<td> ${ empresa.estado } </td>
 			</tbody>
-		<%	
-			}
-		%>
-		
+		</c:forEach>
 		</table>
 		
 		<a class="btn btn-primary" href="/gerenciador/formNovaEmpresa.html" role="button">Voltar ao cadastro</a>
