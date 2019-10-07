@@ -4,10 +4,26 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </head>
 <body>
 
 <div class="container">
+
+<c:if test="${ not empty empresa }">
+
+	<script>
+		Swal.fire({
+	  	position: 'top-center',
+	  	type: 'success',
+	 	title: 'Empresa ${ empresa } cadastrada com sucesso.',
+	  	showConfirmButton: false,
+	  	timer: 2500
+		})
+</script>
+
+</c:if>
+
 <h3 style="color: #fff; border: 1px solid #ccc; background: #054f77; padding: 10px; ">Empresas cadastradas</h3><br />
 	<table class="table table-hover">
 		<thead>
