@@ -7,6 +7,7 @@
 <body>
 
 <div class="container">
+<h3 style="color: #fff; border: 1px solid #ccc; background: #054f77; padding: 10px; ">Empresas cadastradas</h3><br />
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -16,8 +17,7 @@
 			  <th scope="col">Estado</th>
 			  </tr>
 		</thead>
-		<h3 style="color: #fff; border: 1px solid #ccc; background: #054f77; padding: 10px; ">Empresas cadastradas</h3><br />
-		
+				
 		<c:forEach items="${ empresas }" var="empresa">
 			<tbody>
 				<tr>
