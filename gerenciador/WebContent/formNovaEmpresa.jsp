@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +16,8 @@
 <header style="color: #fff; border: 1px solid #ccc; background: #054f77; padding: 10px; "><h3>Cadastrar empresa</h3></header>
 <br />
 
-<form action="/gerenciador/novaEmpresa" method="post" class="needs-validation" novalidate>
+
+<form action="<c:url value="/novaEmpresa"/>" method="post" class="needs-validation" novalidate>
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationCustom01">Nome:</label>

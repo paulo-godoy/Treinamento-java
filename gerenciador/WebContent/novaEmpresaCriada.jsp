@@ -4,14 +4,23 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </head>
 <body>
 
 <div class="container">
-	<div class="alert alert-success mw-10 p-2" role="alert"> 
-		Empresa ${ empresa } cadastrada com sucesso.
-	</div>
-	<a class="btn btn-primary" href="/gerenciador/listaEmpresasServlet" role="button">Verificar lista de empresas</a>
+<script>
+Swal.fire({
+	  position: 'top-center',
+	  type: 'success',
+	  title: 'Empresa ${ empresa } cadastrada com sucesso.',
+	  showConfirmButton: false,
+	  timer: 2500
+	})
+</script>
+
+	
+	<h1 style="color: #fff; border: 1px solid #ccc; background: #054f77; padding: 10px; "><a class="btn btn-primary" href="/gerenciador/listaEmpresasServlet" role="button">Verificar lista de empresas</a></h1>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
