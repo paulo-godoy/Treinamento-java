@@ -1,5 +1,7 @@
 package br.com.aluragerenciador.servlet;
 
+import java.util.Date;
+
 public class Empresa {
 	
 	private Integer id;
@@ -8,11 +10,12 @@ public class Empresa {
 	private String cidade;
 	private String estado;
 	private Integer cep;
+	private Date dataAbertura;
 	
 	
 	
 	
-	public Empresa(Integer id, String nome, String endereco, String cidade, String estado, Integer cep) {
+	public Empresa(Integer id, String nome, String endereco, String cidade, String estado, Integer cep, Date dataAbertura) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -20,6 +23,7 @@ public class Empresa {
 		this.cidade = cidade;
 		this.estado = estado;
 		this.cep = cep;
+		this.dataAbertura = dataAbertura;
 	}
 	
 	
@@ -60,6 +64,13 @@ public class Empresa {
 		this.cep = cep;
 	}
 	
+	public Date getDataAbertura() {
+		return dataAbertura;
+	}
+	
+	public void setDataAbertura(Date dataAbertura) {
+		this.dataAbertura = dataAbertura;
+	}
 	
 	
 	

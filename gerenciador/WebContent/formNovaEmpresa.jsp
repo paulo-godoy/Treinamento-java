@@ -46,18 +46,25 @@
   </div>
   <div class="form-row">
     
-    <div class="col-md-6 mb-3">
+    <div class="col-md-4 mb-3">
       <label for="validationCustom04">Estado</label>
-      <input type="text" name="estado" name="estado" class="form-control" id="validationCustom04" placeholder="Estado" required>
+      <input type="text" name="estado" class="form-control" id="validationCustom04" placeholder="Estado" required>
       <div class="invalid-feedback">
         Por favor, informe um estado válido.
       </div>
     </div>
-    <div class="col-md-6 mb-3">
+    <div class="col-md-4 mb-3">
       <label for="validationCustom05">CEP</label>
-      <input type="text" name="cep" name="cep" class="form-control" id="validationCustom05" placeholder="CEP" required>
+      <input type="text" name="cep" class="form-control" id="validationCustom05" placeholder="CEP" required>
       <div class="invalid-feedback">
         Por favor, informe um CEP válido.
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom06">Data abertura</label>
+      <input type="text" name="data" class="form-control" id="validationCustom06" placeholder="Data abertura" onkeypress="mascaraData( this, event )" required>
+      <div class="invalid-feedback">
+        Por favor, informe um estado válido.
       </div>
     </div>
   </div>
@@ -96,6 +103,29 @@
     });
   }, false);
 })();
+
+
+///////
+
+function mascaraData( campo, e )
+{
+	var kC = (document.all) ? event.keyCode : e.keyCode;
+	var data = campo.value;
+	
+	if( kC!=8 && kC!=46 )
+	{
+		if( data.length==2 )
+		{
+			campo.value = data += '/';
+		}
+		else if( data.length==5 )
+		{
+			campo.value = data += '/';
+		}
+		else
+			campo.value = data;
+	}
+}
 </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

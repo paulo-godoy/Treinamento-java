@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List, br.com.aluragerenciador.servlet.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
@@ -15,16 +16,18 @@
 			  <th scope="col">Endereço</th>
 			  <th scope="col">Cidade</th>
 			  <th scope="col">Estado</th>
+			  <th scope="col">Data abertura</th>
 			  </tr>
 		</thead>
 				
 		<c:forEach items="${ empresas }" var="empresa">
-			<tbody>
+		    <tbody>
 				<tr>
 				<td> ${ empresa.nome } </td>
 				<td> ${ empresa.endereco } </td>
 			    <td> ${ empresa.cidade } </td>
 				<td> ${ empresa.estado } </td>
+				<td> <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/> </td>
 			</tbody>
 		</c:forEach>
 		</table>
