@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:url value="/novaEmpresa" var="linkServletNovaEmpresa"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,7 @@
 <br />
 
 
-<form action="<c:url value="/novaEmpresa"/>" method="post" class="needs-validation" novalidate>
+<form action="${ linkServletNovaEmpresa }" method="post" class="needs-validation" novalidate>
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationCustom01">Nome:</label>
