@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/novaEmpresa" var="linkServletNovaEmpresa"/>
+<c:url value="/alteraEmpresa" var="linkServletNovaEmpresa"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,16 +20,21 @@
 
 <form action="${ linkServletNovaEmpresa }" method="post" class="needs-validation" novalidate>
   <div class="form-row">
-    <div class="col-md-4 mb-3">
+  
+  	<div style="display:none;" class="col-md-1 mb-3">
+      <label for="validationCustom01">ID:</label>
+      <input type="text" name="id" class="form-control" id="validationCustom00" value="${ empresa.id }" placeholder="id"  required>
+    </div>
+    <div class="col-md-3 mb-3">
       <label for="validationCustom01">Nome:</label>
-      <input type="text" name="nome" class="form-control" id="validationCustom01" placeholder="Nome"  required>
+      <input type="text" name="nome" class="form-control" id="validationCustom01" value="${ empresa.nome }" placeholder="Nome"  required>
       <div class="valid-feedback">
         Tudo certo!
       </div>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationCustom02">Endereço:</label>
-      <input type="text" name="endereco" class="form-control" id="validationCustom02" placeholder="Endereço"  required>
+      <input type="text" name="endereco" class="form-control" id="validationCustom02" value="${ empresa.endereco }" placeholder="Endereço"  required>
       <div class="valid-feedback">
         Tudo certo!
       </div>
@@ -37,7 +42,7 @@
     
     <div class="col-md-4 mb-3">
       <label for="validationCustom03">Cidade</label>
-      <input type="text" name="cidade" class="form-control" id="validationCustom03" placeholder="Cidade" required>
+      <input type="text" name="cidade" class="form-control" id="validationCustom03" value="${ empresa.cidade }" placeholder="Cidade" required>
       <div class="invalid-feedback">
         Por favor, informe uma cidade válida.
       </div>
@@ -48,37 +53,28 @@
     
     <div class="col-md-4 mb-3">
       <label for="validationCustom04">Estado</label>
-      <input type="text" name="estado" class="form-control" id="validationCustom04" placeholder="Estado" required>
+      <input type="text" name="estado" class="form-control" id="validationCustom04" value="${ empresa.estado }" placeholder="Estado" required>
       <div class="invalid-feedback">
         Por favor, informe um estado válido.
       </div>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationCustom05">CEP</label>
-      <input type="text" name="cep" class="form-control" id="validationCustom05" placeholder="CEP" required>
+      <input type="text" name="cep" class="form-control" id="validationCustom05" value="${ empresa.cep }" placeholder="CEP" required>
       <div class="invalid-feedback">
         Por favor, informe um CEP válido.
       </div>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationCustom06">Data abertura</label>
-      <input type="text" name="data" class="form-control" id="validationCustom06" placeholder="Data abertura" onkeypress="mascaraData( this, event )" required>
+      <fmt:formatDate var="fmtDate" value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/>
+      <input type="text" name="data" class="form-control" id="validationCustom06" value="${ fmtDate }" placeholder="Data abertura" onkeypress="mascaraData( this, event )" required>
       <div class="invalid-feedback">
         Por favor, informe um estado válido.
       </div>
     </div>
   </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label" for="invalidCheck">
-        Concordo com os termos e condições
-      </label>
-      <div class="invalid-feedback">
-        Você deve concordar, antes de continuar.
-      </div>
-    </div>
-  </div>
+  
   <button class="btn btn-primary" type="submit">Salvar</button>
 </form>
 
