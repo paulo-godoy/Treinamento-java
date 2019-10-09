@@ -1,4 +1,4 @@
-package br.com.aluragerenciador.servlet;
+package br.com.aluragerenciador.modelo;
 
 import java.util.ArrayList;
 import java.util.Iterator;

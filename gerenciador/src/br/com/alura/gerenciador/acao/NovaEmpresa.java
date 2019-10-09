@@ -1,32 +1,29 @@
-package br.com.aluragerenciador.servlet;
+package br.com.alura.gerenciador.acao;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.aluragerenciador.modelo.Banco;
+import br.com.aluragerenciador.modelo.Empresa;
 
-@WebServlet("/alteraEmpresa")
-public class AlteraEmpresa extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
+public class NovaEmpresa {
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void criaEmpresa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
+		PrintWriter saida = response.getWriter();
 		String nomeEmpresa = request.getParameter("nome");
 		String enderecoEmpresa = request.getParameter("endereco");
 		String cidade = request.getParameter("cidade");
 		String estado = request.getParameter("estado");
 		//recebe a data
 		String paramDataEmpresa = request.getParameter("data");
-		String paramId = request.getParameter("id");
-		Integer id = Integer.valueOf(paramId);
 		
 		
 		
@@ -41,16 +38,25 @@ public class AlteraEmpresa extends HttpServlet {
 			throw new ServletException(e);
 		}
 		
+		
+		
+		
+		Empresa empresa = new Empresa(1 , nomeEmpresa, enderecoEmpresa, cidade, estado, 91720000, dataAbertura );
+		
 		Banco banco = new Banco();
-		Empresa empresa = banco.buscaEmpresaPorId(id);
-		empresa.setNome(nomeEmpresa);
-		empresa.setEndereco(enderecoEmpresa);
-		empresa.setCidade(cidade);
-		empresa.setEstado(estado);
-		empresa.setDataAbertura(dataAbertura);
+		
+		banco.adiciona(empresa);
+		
+		 //chamar o JSP
+		/*
+		 * RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresasServlet");
+		 * request.setAttribute("empresa", empresa.getNome()); rd.forward(request,
+		 * response);
+		 */
+
+		response.sendRedirect("entrada?acao=ListaEmpresas");
 		
 		
-		response.sendRedirect("listaEmpresasServlet");
 	}
 
 }

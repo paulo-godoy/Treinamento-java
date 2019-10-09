@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/alteraEmpresa" var="linkServletNovaEmpresa"/>
+<c:url value="/entrada" var="linkServletNovaEmpresa"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +25,11 @@
       <label for="validationCustom01">ID:</label>
       <input type="text" name="id" class="form-control" id="validationCustom00" value="${ empresa.id }" placeholder="id"  required>
     </div>
-    <div class="col-md-3 mb-3">
+    <div style="display:block;" class="col-md-1 mb-3">
+      <label for="validationCustom01">ACAO:</label>
+      <input type="text" name="acao" class="form-control" value="AlteraEmpresa">
+    </div>
+    <div class="col-md-2 mb-3">
       <label for="validationCustom01">Nome:</label>
       <input type="text" name="nome" class="form-control" id="validationCustom01" value="${ empresa.nome }" placeholder="Nome"  required>
       <div class="valid-feedback">
