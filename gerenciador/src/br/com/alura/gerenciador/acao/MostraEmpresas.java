@@ -12,7 +12,7 @@ import br.com.aluragerenciador.modelo.Empresa;
 
 public class MostraEmpresas {
 	
-	public void mostra(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String mostra(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
@@ -22,8 +22,8 @@ public class MostraEmpresas {
 		Empresa empresa = banco.buscaEmpresaPorId(id);
 		
 		request.setAttribute("empresa", empresa);
-		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraEmpresa.jsp");
-		rd.forward(request, response);
+		return"forward:formAlteraEmpresa.jsp";
+		
 		
 	}
 

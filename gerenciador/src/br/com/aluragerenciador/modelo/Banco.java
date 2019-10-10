@@ -8,10 +8,13 @@ public class Banco {
 	
 	private static List<Empresa> lista = new ArrayList<>();
 	private static Integer chaveSequencial = 1;
-
+	
+	
 	public void adiciona(Empresa empresa) {
+		
 		empresa.setId(Banco.chaveSequencial++);
 		Banco.lista.add(empresa);
+		
 	}
 	
 	public List<Empresa> getEmpresas() {
