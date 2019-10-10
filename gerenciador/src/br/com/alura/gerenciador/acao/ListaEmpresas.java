@@ -13,8 +13,10 @@ import br.com.aluragerenciador.modelo.Empresa;
 
 public class ListaEmpresas {
 	
+	private static int count;
 	public void listandoEmpresas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		count++;
+		System.out.println(count);
 	Banco banco = new Banco();
 		
 		List<Empresa> lista = banco.getEmpresas();

@@ -25,7 +25,7 @@
       <label for="validationCustom01">ID:</label>
       <input type="text" name="id" class="form-control" id="validationCustom00" value="${ empresa.id }" placeholder="id"  required>
     </div>
-    <div style="display:block;" class="col-md-1 mb-3">
+    <div style="display:none;" class="col-md-1 mb-3">
       <label for="validationCustom01">ACAO:</label>
       <input type="text" name="acao" class="form-control" value="AlteraEmpresa">
     </div>

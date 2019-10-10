@@ -21,7 +21,7 @@
 <form action="${ linkServletNovaEmpresa }" method="post" class="needs-validation" novalidate>
   <div class="form-row">
   
-  	<div style="display:block;" class="col-md-1 mb-3">
+  	<div style="display:none;" class="col-md-1 mb-3">
       <label for="validationCustom01">Açao:</label>
       <input type="text" name="acao" class="form-control" value="NovaEmpresa">
     </div>

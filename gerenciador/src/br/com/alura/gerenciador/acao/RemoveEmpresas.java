@@ -12,6 +12,7 @@ public class RemoveEmpresas {
 	
 	public void removeEmpresa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
 		
