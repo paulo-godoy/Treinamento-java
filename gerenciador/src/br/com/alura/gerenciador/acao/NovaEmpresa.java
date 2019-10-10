@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.aluragerenciador.modelo.Banco;
 import br.com.aluragerenciador.modelo.Empresa;
 
-public class NovaEmpresa {
+public class NovaEmpresa implements Acao {
 	
-	public String criaEmpresa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		PrintWriter saida = response.getWriter();
 		String nomeEmpresa = request.getParameter("nome");

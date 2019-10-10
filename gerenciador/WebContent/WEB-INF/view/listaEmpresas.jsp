@@ -54,12 +54,12 @@
 				<td> ${ empresa.estado } </td>
 				<td> <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/> </td>
 				<td><a href="/gerenciador/entrada?acao=MostraEmpresas&id=${ empresa.id }"><i style="color: #007bff;" class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Editar"></i></a></td>
-				<td><a href="/gerenciador/entrada?acao=RemoveEmpresa&id=${ empresa.id }"><i style="color: red;" class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Excluir"></i></a></td>
+				<td><a href="/gerenciador/entrada?acao=RemoveEmpresas&id=${ empresa.id }"><i style="color: red;" class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Excluir"></i></a></td>
 			</tbody>
 		</c:forEach>
 		</table>
 		
-		<a class="btn btn-primary" href="/gerenciador/formNovaEmpresa.jsp" role="button">Novo cadastro</a>
+		<a class="btn btn-primary" href="/gerenciador/entrada?acao=NovaEmpresaForm" role="button">Novo cadastro</a>
 		</div>
 		
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

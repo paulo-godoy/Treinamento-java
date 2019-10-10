@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.aluragerenciador.modelo.Banco;
 
-public class RemoveEmpresas {
+public class RemoveEmpresas implements Acao {
 	
-	public String removeEmpresa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
 		String paramId = request.getParameter("id");

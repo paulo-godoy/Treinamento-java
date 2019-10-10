@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.aluragerenciador.modelo.Banco;
 import br.com.aluragerenciador.modelo.Empresa;
 
-public class MostraEmpresas {
+public class MostraEmpresas implements Acao{
 	
-	public String mostra(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);

@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.aluragerenciador.modelo.Banco;
 import br.com.aluragerenciador.modelo.Empresa;
 
-public class AlteraEmpresa {
+public class AlteraEmpresa implements Acao {
 	
-	public String editEmpresa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String nomeEmpresa = request.getParameter("nome");
 		String enderecoEmpresa = request.getParameter("endereco");
