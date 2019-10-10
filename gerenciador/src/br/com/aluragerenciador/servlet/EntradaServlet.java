@@ -9,13 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.alura.gerenciador.acao.ListaEmpresas;
 import br.com.alura.gerenciador.acao.Acao;
-import br.com.alura.gerenciador.acao.AlteraEmpresa;
-import br.com.alura.gerenciador.acao.MostraEmpresas;
-import br.com.alura.gerenciador.acao.NovaEmpresa;
-import br.com.alura.gerenciador.acao.NovaEmpresaForm;
-import br.com.alura.gerenciador.acao.RemoveEmpresas;
 
 
 @WebServlet("/entrada")
