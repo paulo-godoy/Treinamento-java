@@ -20,10 +20,9 @@ public class EntradaServlet extends HttpServlet {
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(request == null)
-			System.out.println("jesus");
+		
 		String paramAcao = request.getParameter("acao");
-		System.out.println(paramAcao);
+		
 		
 		if (paramAcao.equals("ListaEmpresas")) {
 			
