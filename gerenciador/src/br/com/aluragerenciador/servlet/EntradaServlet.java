@@ -21,7 +21,7 @@ public class EntradaServlet extends HttpServlet {
 		
 		String paramAcao = request.getParameter("acao");
 		
-		String nomeDaClasse = "br.com.alura.gerenciador.acao."+paramAcao;
+		String nomeDaClasse = "br.com.alura.gerenciador.acao." + paramAcao;
 		
 		String nome;
 		try {

@@ -11,11 +11,11 @@ import br.com.aluragerenciador.modelo.Banco;
 import br.com.aluragerenciador.modelo.Empresa;
 
 public class ListaEmpresas implements Acao {
-	
 
-	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	Banco banco = new Banco();
+	@Override
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		Banco banco = new Banco();
 		
 		List<Empresa> lista = banco.getEmpresas();
 		
@@ -23,7 +23,21 @@ public class ListaEmpresas implements Acao {
 		request.setAttribute("empresas", lista);
 		
 		return "forward:/listaEmpresas.jsp";
-		
+
 	}
+	
+
+//	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		
+//	Banco banco = new Banco();
+//		
+//		List<Empresa> lista = banco.getEmpresas();
+//		
+//		//Chama a pagina jsp
+//		request.setAttribute("empresas", lista);
+//		
+//		return "forward:/listaEmpresas.jsp";
+//		
+//	}
 
 }
