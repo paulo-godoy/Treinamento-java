@@ -11,6 +11,12 @@
 <script src="sweetalert2.all.min.js"></script>
 <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+<style>
+.invisivel {
+display:none;
+}
+</style>
 </head>
 <body>
 <nav style="color: #fff; border: 1px solid #ccc; background: #054f77;" class="navbar mb-4 navbar-expand-lg navbar-light">
@@ -25,9 +31,8 @@
         <div class="p-2 bd-highlight float-right mr-2">${ usuarioLogado.login }</div>
         
         <form class="form-inline my-2 my-lg-0 float-right">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-    </form>
+      <input id="filtrar-tabela" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+     </form>
   
 	</div>
   </div>
@@ -67,8 +72,8 @@
 				
 		<c:forEach items="${ empresas }" var="empresa">
 		    <tbody>
-				<tr>
-				<td> ${ empresa.nome } </td>
+				<tr class="empresa">
+				<td class="info-nome"> ${ empresa.nome } </td>
 				<td> ${ empresa.endereco } </td>
 			    <td> ${ empresa.cidade } </td>
 				<td> ${ empresa.estado } </td>
@@ -85,7 +90,35 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-		
+<script type="text/javascript">
+var campoFiltro = document.querySelector("#filtrar-tabela");
+
+campoFiltro.addEventListener("input", function () {
+    var pacientes = document.querySelectorAll(".empresa");
+ 
+    if (this.value.length > 0) {
+    	
+        for (var i = 0; i < pacientes.length; i++) {
+            var paciente = pacientes[i];
+            var tdNome = paciente.querySelector(".info-nome");
+            var nome = tdNome.textContent;
+            var expressao = new RegExp(this.value, "i");
+            if (!expressao.test(nome)) {
+                paciente.classList.add("invisivel");
+            } else {
+                paciente.classList.remove("invisivel");
+            }
+        }
+ 
+    } else {
+        for (var i = 0; i < pacientes.length; i++) {
+            var paciente = pacientes[i];
+            paciente.classList.remove("invisivel");
+        }
+    }
+ 
+});
+</script>		
 
 </body>
 </html>
