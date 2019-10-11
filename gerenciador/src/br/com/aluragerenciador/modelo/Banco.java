@@ -1,6 +1,7 @@
 package br.com.aluragerenciador.modelo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,6 +16,13 @@ public class Banco {
 	private static Integer chaveSequencial = 1;
 	
 	static {
+		//Lista de empresas
+		Empresa e1 = new Empresa(1, "Compasso", "Av, Julho de castilhos, 132", "Porto Alegre", "RS", 91720000, new Date());
+		Empresa e2 = new Empresa(2, "UOL", "Av, Julho de castilhos, 132", "Porto Alegre", "RS", 91720000, new Date() );
+		
+		lista.add(e1);
+		lista.add(e2);
+		
 		Usuario u1 = new Usuario();
 		u1.setLogin("paulo.godoy");
 		u1.setSenha("12345");

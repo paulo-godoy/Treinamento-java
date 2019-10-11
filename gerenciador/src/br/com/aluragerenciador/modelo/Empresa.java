@@ -13,13 +13,12 @@ public class Empresa {
 	private Date dataAbertura;
 	
 	
-	
-	
+		
 	public Empresa(Integer id, String nome, String endereco, String cidade, String estado, Integer cep, Date dataAbertura) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.endereco = endereco;
+		this.endereco = endereco;  //tudo isso é atributos
 		this.cidade = cidade;
 		this.estado = estado;
 		this.cep = cep;

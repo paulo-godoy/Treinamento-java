@@ -13,7 +13,26 @@
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 </head>
 <body>
+<nav style="color: #fff; border: 1px solid #ccc; background: #054f77;" class="navbar mb-4 navbar-expand-lg navbar-light">
+  <h2 style="color:#fff;" class="navbar-brand">Lista de empresas</h2>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div style="justify-content: flex-end;" class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+	<div class="d-flex justify-content-end">
+		<div class="p-2 bd-highlight float-right"><h5>Usuário:</h5></div>
+        <div class="p-2 bd-highlight float-right mr-2">${ usuarioLogado.login }</div>
+        
+        <form class="form-inline my-2 my-lg-0 float-right">
+      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
+  
+	</div>
+  </div>
+    
+</nav>
 <div class="container">
 
 <c:if test="${ not empty empresa }">
@@ -31,7 +50,8 @@
 
 </c:if>
 
-<h3 style="color: #fff; border: 1px solid #ccc; background: #054f77; padding: 10px; ">Empresas cadastradas</h3><br />
+
+
 	<table class="table table-hover">
 		<thead>
 			<tr>
