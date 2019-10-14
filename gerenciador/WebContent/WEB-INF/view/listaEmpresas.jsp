@@ -27,12 +27,16 @@ display:none;
 
   <div style="justify-content: flex-end;" class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 	<div class="d-flex justify-content-end">
+	
+		 <form class="form-inline my-2 my-lg-0 float-right">
+      		<input id="filtrar-tabela" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+     	</form>
+     	
 		<div class="p-2 bd-highlight float-right"><h5>Usuário:</h5></div>
         <div class="p-2 bd-highlight float-right mr-2">${ usuarioLogado.login }</div>
         
-        <form class="form-inline my-2 my-lg-0 float-right">
-      <input id="filtrar-tabela" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-     </form>
+        <div class="p-2 bd-highlight float-right mr-2"><a style="color: #fff;" href="entrada?acao=Logout"><i class="fas fa-sign-out-alt fa-2x"></i></a></div>
+     	
   
 	</div>
   </div>

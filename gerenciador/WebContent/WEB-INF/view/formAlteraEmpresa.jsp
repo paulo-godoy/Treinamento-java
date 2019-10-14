@@ -12,10 +12,27 @@
 </head>
 <body>
 
+<nav style="color: #fff; border: 1px solid #ccc; background: #054f77;" class="navbar mb-4 navbar-expand-lg navbar-light">
+  <h2 style="color:#fff;" class="navbar-brand">Editar dados da empresas</h2>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div style="justify-content: flex-end;" class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+	<div class="d-flex justify-content-end">
+		<div class="p-2 bd-highlight float-right"><h5>Usuário:</h5></div>
+        <div class="p-2 bd-highlight float-right mr-2">${ usuarioLogado.login }</div>
+        
+        <div class="p-2 bd-highlight float-right mr-2"><a style="color: #fff;" href="entrada?acao=Logout"><i class="fas fa-sign-out-alt fa-2x"></i></a></div>
+        
+
+	</div>
+  </div>
+    
+</nav>
 
 <div class="container">
-<header style="color: #fff; border: 1px solid #ccc; background: #054f77; padding: 10px; "><h3>Cadastrar empresa</h3></header>
-<br />
+
 
 
 <form action="${ linkServletNovaEmpresa }" method="post" class="needs-validation" novalidate>
