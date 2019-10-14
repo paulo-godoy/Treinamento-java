@@ -9,6 +9,12 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<!--  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>-->
+<script src="sweetalert2.all.min.js"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 </head>
 <body>
 
@@ -22,7 +28,6 @@
 	<div class="d-flex justify-content-end">
 		<div class="p-2 bd-highlight float-right"><h5>Usuário:</h5></div>
         <div class="p-2 bd-highlight float-right mr-2">${ usuarioLogado.login }</div>
-        
         <div class="p-2 bd-highlight float-right mr-2"><a style="color: #fff;" href="entrada?acao=Logout"><i class="fas fa-sign-out-alt fa-2x"></i></a></div>
         
 
@@ -97,7 +102,9 @@
   </div>
   
   <button class="btn btn-primary" type="submit">Salvar</button>
+  <a class="btn btn-primary" href="/gerenciador/entrada?acao=ListaEmpresas" role="button">Voltar</a>
 </form>
+
 
 </div>
 
