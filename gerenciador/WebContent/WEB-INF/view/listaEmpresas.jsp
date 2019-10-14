@@ -79,7 +79,7 @@ display:none;
 				<td> ${ empresa.estado } </td>
 				<td> <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/> </td>
 				<td><a href="/gerenciador/entrada?acao=MostraEmpresas&id=${ empresa.id }"><i style="color: #007bff;" class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Editar"></i></a></td>
-				<td><a href="/gerenciador/entrada?acao=RemoveEmpresas&id=${ empresa.id }"><i style="color: red;" class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Excluir"></i></a></td>
+				<td><a id="remove" href="/gerenciador/entrada?acao=RemoveEmpresas&id=${ empresa.id }"><i style="color: red;" class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Excluir"></i></a></td>
 			</tbody>
 		</c:forEach>
 		</table>
